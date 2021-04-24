@@ -11,7 +11,7 @@ Created a program in Python that:
 Can start the server by running app.py 
 
 Server responds to:
-`curl --data ‘{“ips”:[“94.142.241.194”, “192.168.1.1”]}’ -H “Content-type: application/json” http://localhost:5000/checkips`
+`curl --data '{"ips":["94.142.241.194", "192.168.1.1"]}' -H "Content-type: application/json" http://127.0.0.1:5000/checkips`
 and prints:
 1
 
