@@ -23,16 +23,20 @@ url = 'https://raw.githubusercontent.com/stamparm/ipsum/master/levels/5.txt'
 # browser.
 
 @app.route('/checkips', methods=['POST'])
-def checkips():
-    # initialize a number to count ips
-    number = 0
-
+def checkips_controller():
     # have content as inputted data with curl
     content = request.get_json()
 
+    return checkips_service(content)
+
+
+def checkips_service(content):
+    # initialize a number to count ips
+    number = 0
+
     # check if there is no input, if there is no input, automatic 0
     if content is None:
-        return "0"
+        return "1"
 
     # ips_given gets the dictionary element with key 'ips'
     ips_given = content['ips']
@@ -77,7 +81,7 @@ def checkips():
             # add one if it is
             number += 1
     
-    return bytes(number)
+    return str(number)
 
 
 # main method here

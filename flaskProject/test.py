@@ -28,8 +28,8 @@ class MyTestCase(unittest.TestCase):
     def test_checkips(self):
         tester = app.test_client(self)
         # replace data with something that is not found in the url
-        response = tester.post('/checkips', data = '{"ips":["127.0.0.1"]}')
-        self.assertIn(b'0', response.data)
+        response = tester.post('/checkips', data = '{"ips":["62.210.105.116"]}', content_type = "application/json")
+        self.assertIn(b'1', response.data)
 
 
 if __name__ == '__main__':
