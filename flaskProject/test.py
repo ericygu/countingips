@@ -27,7 +27,7 @@ class MyTestCase(unittest.TestCase):
     # test data, specifically if it works for this ip
     def test_checkips(self):
         tester = app.test_client(self)
-        # replace data with something that is not found in the url
+        # replace data with something that is found in the url
         response = tester.post('/checkips', data = '{"ips":["62.210.105.116"]}', content_type = "application/json")
         self.assertIn(b'1', response.data)
 
